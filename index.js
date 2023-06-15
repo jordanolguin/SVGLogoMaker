@@ -1,5 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const triangle = require("./lib/triangle");
+const circle = require("./lib/circle");
+const square = require("./lib/square");
+const svg = require("./lib/svg");
 
 inquirer
   .prompt([
@@ -27,10 +31,18 @@ inquirer
       name: "shape-color",
     },
   ])
-  .then(() => {
-    fs.writeFile(fileName, data, (err) => {
+  .then(({text, text-color, shape, shape-color}) => {
+    fs.writeFile("LOGO.svg", svg.render(), (err) => {
       if (err) {
-        console.info(` Uh oh! ${err}`);
+        console.info(`Uh oh! ${err}`);
       }
     });
   });
+
+function init() {
+  inquirer.prompt(questions).then((answers) => {
+    writeToFile("LOGO.svg");
+  });
+}
+
+init();
