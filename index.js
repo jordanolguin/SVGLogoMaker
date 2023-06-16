@@ -31,8 +31,13 @@ function init() {
           "Please enter a color keyword (or hexadecimal number) for the shape",
         name: "shapeColor",
       },
+      {
+        type: "input",
+        message: "Please choose a name for this logo",
+        name: "fileName",
+      },
     ])
-    .then(({ text, textColor, shape, shapeColor }) => {
+    .then(({ text, textColor, shape, shapeColor, fileName }) => {
       const logo = new Svg();
       logo.text = text;
       logo.textColor = textColor;
@@ -56,7 +61,7 @@ function init() {
       shapeInstance.setColor(shapeColor);
       logo.shape = shapeInstance;
 
-      fs.writeFile("LOGO.svg", logo.render(), (err) => {
+      fs.writeFile(`${fileName}.svg`, logo.render(), (err) => {
         if (err) {
           console.info(`Uh oh! ${err}`);
         } else {
