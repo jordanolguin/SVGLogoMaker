@@ -1,4 +1,4 @@
-const Shapes = require("./shapes");
+const Shapes = require("../lib/shapes");
 
 describe("Shapes", () => {
   describe("setColor", () => {
