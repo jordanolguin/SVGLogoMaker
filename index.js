@@ -38,9 +38,7 @@ function init() {
       },
     ])
     .then(({ text, textColor, shape, shapeColor, fileName }) => {
-      const logo = new Svg();
-      logo.text = text;
-      logo.textColor = textColor;
+      const logo = new Svg(text, textColor);
 
       let shapeInstance;
       switch (shape) {
@@ -59,7 +57,7 @@ function init() {
       }
 
       shapeInstance.setColor(shapeColor);
-      logo.shape = shapeInstance;
+      logo.setShape(shapeInstance);
 
       fs.writeFile(`${fileName}.svg`, logo.render(), (err) => {
         if (err) {
