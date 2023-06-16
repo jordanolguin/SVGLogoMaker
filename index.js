@@ -33,7 +33,7 @@ function init() {
       },
     ])
     .then(({ text, textColor, shape, shapeColor }) => {
-      const logo = new Svg(text, shape);
+      const logo = new Svg();
       logo.text = text;
       logo.textColor = textColor;
 
