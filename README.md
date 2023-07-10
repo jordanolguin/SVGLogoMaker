@@ -20,6 +20,9 @@ Follow a series of prompts in the CLI to create your desired logo. To run test r
 npm run test
 ```
 
+Please refer to the following link for a walkthrough video demonstration:
+https://drive.google.com/file/d/1RDKfZoDH70rpGYFpkc_ln3G47t3iKrP9/view
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
